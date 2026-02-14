@@ -1,117 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>My Shopping website</title>
-    <link rel="stylesheet" href="CSS/style.css">
-  </head>  
-  <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Navigation/Contacts.html"> Contacts</a></li>
-            <li><a href="Navigation/About.html">About Us</a></li>
-            <li><a href="Navigation/Testimony.html"> Testimony</a></li>
-        </ul>
-    </nav>
-    <form>
-        <input type="search" placeholder="Search items">
-    </form>
-    <h1> Elda Mulongo FASHION</h1>
-    <p>Shopping has become an essential part of everyday life, offering people the chance to find products that meet their needs and desires. 
-Whether browsing in local markets or exploring online stores, shopping is more than just buying, it’s about discovering new trends, 
-comparing options, and enjoying the experience of choosing what suits you best. 
-Modern shopping websites make this process easier by providing clear categories, detailed product descriptions, and secure payment methods, 
-turning shopping into both a practical task and an enjoyable activity.
-</p>
-<section>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfKLuzqNQz8axAI4Gs15zyV-lM2A_J1m6DIA&s.jng" alt="Image 1">
-    
-</section>
-<section>
-    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8vWhwYW4IWE?si=Cb9S3Hwz43vaQErD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
- <iframe></iframe> 
-</iframe>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elda's Bags</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
 
-</section>
-<section>
-  <!-- Table 1: Products and Prices -->
-<table>
-    <caption>Product List</caption>
-    <tr>
-        <th>Product</th>
-        <th>Category</th>
-        <th>Price (KSH)</th>
-    </tr>
-    <tr>
-        <td>T-shirt</td>
-        <td>Clothing</td>
-        <td>1500</td>
-    </tr>
-    <tr>
-        <td>Shoes</td>
-        <td>Clothing</td>
-        <td>3500</td>
-    </tr>
-    <tr>
-        <td>Headphones</td>
-        <td>Electronics</td>
-        <td>4000</td>
-    </tr>
-</table>
+    /* Navigation */
+    nav {
+      background: linear-gradient(90deg, #ff6f61, #ff9966);
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #222;
+    }
 
-<!-- Table 2: Stock and Availability -->
-<table>
-    <caption>Stock and Availability</caption>
-    <tr>
-        <th>Product</th>
-        <th>Quantity in Stock</th>
-        <th>Available</th>
-    </tr>
-    <tr>
-        <td>T-shirt</td>
-        <td>25</td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td>Shoes</td>
-        <td>35</td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td>Headphones</td>
-        <td>0</td>
-        <td>No</td>
-    </tr>
-</table>
+    /* Search */
+    .search {
+      text-align: center;
+      padding: 1.5rem;
+      background: #fff;
+    }
+    .search input {
+      padding: 0.7rem;
+      width: 250px;
+      border: 2px solid #ff6f61;
+      border-radius: 5px;
+    }
+    .search button {
+      padding: 0.7rem 1.2rem;
+      border: none;
+      background: #ff6f61;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .search button:hover {
+      background: #ff9966;
+    }
 
-<!-- CSS for styling -->
-<style>
+    /* Heading */
+    header {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    /* Paragraphs */
+    p, blockquote {
+      margin: 1rem auto;
+      width: 80%;
+      line-height: 1.6;
+    }
+    blockquote {
+      border-left: 5px solid #ff6f61;
+      padding-left: 1rem;
+      font-style: italic;
+      background: #fff3f0;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Gallery */
+    .gallery {
+      text-align: center;
+      padding: 2rem;
+    }
+    .gallery h2 {
+      margin-bottom: 1rem;
+      color: #ff6f61;
+    }
+    .gallery img {
+      margin: 0.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Videos */
+    .videos {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+    }
+    .videos h2 {
+      margin-bottom: 1rem;
+      color: #ff6f61;
+    }
+    .videos video {
+      margin: 1rem;
+      border: 3px solid #ff6f61;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Table */
+    .table-section {
+      padding: 2rem;
+      text-align: center;
+    }
+    .table-section h2 {
+      margin-bottom: 1rem;
+      color: #ff6f61;
+    }
     table {
-        border-collapse: collapse;
-        width: 50%;
-        margin-bottom: 20px;
+      margin: auto;
+      border-collapse: collapse;
+      width: 90%;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     th, td {
-        border: 1px solid #333;
-        padding: 8px;
-        text-align: center;
+      border: 1px solid #ddd;
+      padding: 0.8rem;
+      text-align: center;
     }
     th {
-        background-color: #f2f2f2;
+      background: #ff6f61;
+      color: white;
     }
-    caption {
-        font-weight: bold;
-        margin-bottom: 5px;
+    tr:nth-child(even) {
+      background: #f9f9f9;
     }
-</style>  
-</section>
+    tr:hover {
+      background: #ffe6e0;
+    }
+  </style>
+</head>
+<body>
 
-  </body>
-</html>
+  <!-- Navigation -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
 
+  <!-- Search -->
+  <section class="search">
+    <input type="text" placeholder="Search for bags...">
+    <button>Search</button>
+  </section>
+
+  <!-- Heading -->
+  <header>
+    <h1>Elda's Bags</h1>
+  </header>
+
+  <!-- Paragraph with formatting -->
+  <p><b>Line 1: Bold text example</b></p>
+  <p><i>Line 2: Italics text example</i></p>
+  <p><u>Line 3: Underlined text example</u></p>
+  <p>Line 4: Superscript example: Date 20<sup>23</sup></p>
+  <p>Line 5: Subscript example: H<sub>2</sub>O</p>
+  <p><s>Line 6: Strikethrough example</s></p>
+  <p><mark>Line 7: Highlighted text example</mark></p>
+  <p>Line 8: Quotation example: <q>Style is a way to say who you are without speaking.</q></p>
+  <p>Line 9: Indented quotation example:</p>
+  <blockquote>
+    Bags are not just accessories, they are companions in your journey.
+  </blockquote>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Elda's Bags. All rights reserved.</p>
+  </footer>
+
+  <!-- Line breaks -->
+  <p>Line A<br>Line B<br>Line C<br>Line D</p>
+
+  <!-- Horizontal rules -->
+  <p>Line 1</p>
+  <hr>
+  <p>Line 2</p>
+  <hr>
+  <p>Line 3</p>
+
+  <!-- Preformatted text -->
+  <pre>
+This is line 1
+This is line 2
+This is line 3
+  </pre>
+
+  <!-- Lists -->
+  <ul>
+    <li>Leather Bag</li>
+    <li>Handbag</li>
+    <li>Backpack</li>
+    <li>Tote Bag</li>
+    <li>Travel Bag</li>
+  </ul>
+
+  <ol>
+    <li>Choose a bag</li>
+    <li>Add to cart</li>
+    <li>Checkout</li>
+    <li>Payment</li>
+    <li>Delivery</li>
+  </ol>
+
+  <!-- Nested list -->
+  <ul>
+    <li>Leather Bags
+      <ul>
+        <li>Brown</li>
+        <li>Black</li>
+      </ul>
+    </li>
+    <li>Handbags
+      <ul>
+        <li>Small</li>
+        <li>Large</li>
+      </ul>
+    </li>
+    <li>Backpacks
+      <ul>
+        <li>School</li>
+        <li>Travel</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- Six Pictures -->
+  <section class="gallery">
+    <h2>Bag Gallery</h2>
+    <img src="bag1.jpg" alt="Leather Bag" width="200">
+    <img src="bag2.jpg" alt="Handbag" width="200">
+    <img src="bag3.jpg" alt="Backpack" width="200">
+    <img src="bag4.jpg" alt="Tote Bag" width="200">
+    <img src="bag5.jpg" alt="Travel Bag" width="200">
+    <img src="bag6.jpg" alt="Designer Bag" width="200">
+  </section>
+
+  <!-- Four Videos -->
+  <section class="videos">
+    <h2>Bag Videos</h2>
+    <video width="320" height="240" controls>
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+    <video width="320" height="240" controls>
+      <source src="video2.mp4" type="video/mp4">
+    </video>
+    <video width="320" height="240" controls>
+      <source src="video3.mp4" type="video/mp4">
+    </video>
+    <video width="320" height="240" controls>
+      <source src="video4.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- Table with 10 columns and 5 rows -->
+  <section class="table-section">
+   
+padding: 2rem;
+      text-align: center;
+    }
+    .table-section h2 {
+      margin-bottom: 1rem;
+      color: #ff6f61;
+    }
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 90%;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.8rem;
+      text-align: center;
+    }
+    th {
+      background: #ff6f61;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    tr:hover {
+      background: #ffe6e0;
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+       
+       
+  
 
 
 
