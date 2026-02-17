@@ -126,28 +126,125 @@
       margin-bottom: 1rem;
       color: #ff6f61;
     }
-    table {
-      margin: auto;
-      border-collapse: collapse;
-      width: 90%;
-      background: #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 0.8rem;
-      text-align: center;
-    }
-    th {
-      background: #ff6f61;
-      color: white;
-    }
-    tr:nth-child(even) {
-      background: #f9f9f9;
-    }
-    tr:hover {
-      background: #ffe6e0;
-    }
+   /* ===== Professional Table Styling ===== */
+
+.bags-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Caption */
+.bags-table caption {
+  caption-side: top;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+/* Header */
+.bags-table thead {
+  background-color: #1f2933;
+}
+
+.bags-table thead th {
+  color: #ffffff;
+  padding: 14px 12px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+/* Body */
+.bags-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.bags-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.bags-table tbody tr:hover {
+  background-color: #eef2f7;
+}
+
+.bags-table td {
+  padding: 12px;
+  color: #333;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Availability badges */
+.bags-table td:last-child {
+  font-weight: 600;
+}
+
+.bags-table td:last-child::before {
+  content: "● ";
+  font-size: 12px;
+}
+
+.bags-table td:last-child:contains("In Stock") {
+  color: #16a34a;
+}
+
+.bags-table td:last-child:contains("Limited Stock") {
+  color: #ca8a04;
+}
+
+.bags-table td:last-child:contains("Out of Stock") {
+  color: #dc2626;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  .bags-table {
+    font-size: 13px;
+  }
+
+  .bags-table thead {
+    display: none;
+  }
+
+  .bags-table,
+  .bags-table tbody,
+  .bags-table tr,
+  .bags-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .bags-table tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .bags-table td {
+    padding: 10px;
+    text-align: right;
+    position: relative;
+  }
+
+  .bags-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #6b7280;
+  }
+}
+      
     /* Footer */
     footer {
       background: #222;
@@ -328,9 +425,93 @@ our bags are designed to be functional and stylish, with features like multiple 
   </iframe>
 </section>
 
-  <!-- Table with 10 columns and 5 rows -->
+  
   <section class="table-section">
-   
+   <table class="bags-table">
+  <caption>Bags Product Overview</caption>
+
+  <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Material</th>
+      <th>Color</th>
+      <th>Size</th>
+      <th>Weight (kg)</th>
+      <th>Brand</th>
+      <th>Price ($)</th>
+      <th>Availability</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>BG001</td>
+      <td>Urban Explorer</td>
+      <td>Backpack</td>
+      <td>Nylon</td>
+      <td>Black</td>
+      <td>Medium</td>
+      <td>0.9</td>
+      <td>UrbanX</td>
+      <td>48</td>
+      <td>In Stock</td>
+    </tr>
+
+    <tr>
+      <td>BG002</td>
+      <td>Classic Elegance</td>
+      <td>Handbag</td>
+      <td>Genuine Leather</td>
+      <td>Brown</td>
+      <td>Small</td>
+      <td>0.7</td>
+      <td>EliteStyle</td>
+      <td>75</td>
+      <td>Limited Stock</td>
+    </tr>
+
+    <tr>
+      <td>BG003</td>
+      <td>Traveler Pro</td>
+      <td>Travel Bag</td>
+      <td>Polyester</td>
+      <td>Grey</td>
+      <td>Large</td>
+      <td>1.8</td>
+      <td>GoTravel</td>
+      <td>120</td>
+      <td>Out of Stock</td>
+    </tr>
+
+    <tr>
+      <td>BG004</td>
+      <td>Eco Tote</td>
+      <td>Tote Bag</td>
+      <td>Recycled Canvas</td>
+      <td>Beige</td>
+      <td>Medium</td>
+      <td>0.6</td>
+      <td>EcoLine</td>
+      <td>32</td>
+      <td>In Stock</td>
+    </tr>
+
+    <tr>
+      <td>BG005</td>
+      <td>Business Carry</td>
+      <td>Laptop Bag</td>
+      <td>PU Leather</td>
+      <td>Dark Blue</td>
+      <td>Medium</td>
+      <td>1.2</td>
+      <td>ProTech</td>
+      <td>89</td>
+      <td>In Stock</td>
+    </tr>
+  </tbody>
+</table>
 
      <!-- Footer -->
   <footer>
@@ -372,6 +553,7 @@ our bags are designed to be functional and stylish, with features like multiple 
        
   
       
+
 
 
 
