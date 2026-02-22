@@ -19,6 +19,27 @@
 
     /* Navigation */
     nav {
+  background: linear-gradient(90deg, #ff6f61, #ff9966);
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: auto;              /* centers nav */
+  padding: 1rem;
+  text-align: center;
+}
+
+.nav-container a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-container a:hover {
+  text-decoration: underline;
+}
+    nav {
       background: linear-gradient(90deg, #ff6f61, #ff9966);
       padding: 1rem;
       text-align: center;
@@ -36,6 +57,33 @@
     }
 
     /* Search */
+    .research-container {
+  width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.research-container h2 {
+  color: #ff6f61;
+  text-align: center;
+}
+
+.research-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.research-container a {
+  color: #981976;
+  text-decoration: none;
+}
+
+.research-container a:hover {
+  text-decoration: underline;
+}
     .search {
       text-align: center;
       padding: 1.5rem;
@@ -337,16 +385,20 @@
 
   <!-- Navigation -->
   <nav>
+    <div class="nav-container">
     <a href="#">Home</a>
     <a href="#">Shop</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
+    </div>
   </nav>
 
   <!-- Search -->
   <section class="search">
+    <div class="search-container">
     <input type="text" placeholder="Search for bags...">
     <button>Search</button>
+    </div>
   </section>
 
   <!-- Heading -->
@@ -356,6 +408,7 @@
   </header>
 
   <!-- Paragraph with formatting -->
+  <div class="content-box">
   <p><b>With Elda's Bags all your needs are met!</b></p>
   <p><i>We have a wide variety of bags for every occasion.</i></p>
   <p><u>trusting us is the best decision you'll make!</u></p>
@@ -426,7 +479,7 @@ our bags are designed to be functional and stylish, with features like multiple 
       </ul>
     </li>
   </ul>
-
+  </div>
   <!-- Six Pictures -->
   <section class="gallery">
     <h2>Bag Gallery</h2>
@@ -501,6 +554,7 @@ our bags are designed to be functional and stylish, with features like multiple 
 
   
   <section class="table-section">
+    <div class="table-container">
    <table class="bags-table">
   <caption>Bags Product Overview</caption>
 
@@ -585,11 +639,14 @@ our bags are designed to be functional and stylish, with features like multiple 
       <td>In Stock</td>
     </tr>
   </tbody>
+    </div>
 </table>
 
      <!-- Footer -->
   <footer>
+    <div class="footer-container">
     <p>&copy; 2026 Elda's Bags. All rights reserved.</p>
+    </div>
   </footer>
   </style>
 </head>
@@ -627,6 +684,7 @@ our bags are designed to be functional and stylish, with features like multiple 
        
   
       
+
 
 
 
