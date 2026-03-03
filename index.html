@@ -1,142 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elda's Bags</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elda's Bags</title>
 
+<style>
 
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
-      background-color: pink;
-      text-align: center;
-    }
-
-    /* Navigation */
-    nav {
-  background: linear-gradient(90deg, #ff6f61, #ff9966);
-}
-
-.nav-container {
-  max-width: 1000px;
-  margin: auto;              /* centers nav */
-  padding: 1rem;
+/* ===================== GENERAL ===================== */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background-color: pink;
   text-align: center;
+  color: #333;
 }
 
-.nav-container a {
+/* ===================== NAVIGATION ===================== */
+nav {
+  background: linear-gradient(90deg, #ff6f61, #ff9966);
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+nav a {
   color: white;
   margin: 0 1rem;
   text-decoration: none;
   font-weight: bold;
 }
 
-.nav-container a:hover {
-  text-decoration: underline;
+nav a:hover {
+  color: black;
 }
-    nav {
-      background: linear-gradient(90deg, #ff6f61, #ff9966);
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #222;
-    }
 
-    /* Search */
-    .research-container {
+/* ===================== HEADER ===================== */
+header {
+  background: #222;
+  color: white;
+  padding: 2rem;
+}
+
+/* ===================== SEARCH ===================== */
+.search {
+  padding: 1.5rem;
+}
+
+.search input {
+  padding: 0.7rem;
+  width: 250px;
+  border: 2px solid #981976;
+  border-radius: 5px;
+}
+
+.search button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  background: #981976;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ===================== CONTENT ===================== */
+.content-box {
   width: 80%;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
+  margin: auto;
   text-align: left;
 }
 
-.research-container h2 {
+blockquote {
+  border-left: 5px solid #ff6f61;
+  padding-left: 1rem;
+  font-style: italic;
+  background: #fff3f0;
+}
+
+/* ===================== GALLERY ===================== */
+.gallery {
+  padding: 2rem;
+}
+
+.gallery h2 {
   color: #ff6f61;
-  text-align: center;
 }
 
-.research-container ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.research-container a {
-  color: #981976;
-  text-decoration: none;
-}
-
-.research-container a:hover {
-  text-decoration: underline;
-}
-    .search {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: pink;
-    }
-    .search input {
-      padding: 0.7rem;
-      width: 250px;
-      border: 2px solid #981976;
-      border-radius: 5px;
-    }
-    .search button {
-      padding: 0.7rem 1.2rem;
-      border: none;
-      background: #981976;
-      color: rgb(255, 255, 255);
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .search button:hover {
-      background: #a51890;
-    }
-
-    /* Heading */
-    header {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-    }
-
-    /* Paragraphs */
-    p, blockquote {
-      margin: 1rem auto;
-      width: 80%;
-      line-height: 1.6;
-    }
-    blockquote {
-      border-left: 5px solid #ff6f61;
-      padding-left: 1rem;
-      font-style: italic;
-      background: #fff3f0;
-    }
-    
-   .gallery-row {
-  display: flex;              /* rend horizontal */
-  justify-content: center;    /* centre les images */
-  gap: 20px;                  /* espace entre images */
-  flex-wrap: wrap;            /* retour à la ligne si écran petit */
+.gallery-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .img-box {
@@ -144,7 +98,6 @@
   background: white;
   padding: 10px;
   border-radius: 10px;
-  text-align: center;
 }
 
 .img-box img {
@@ -152,296 +105,95 @@
   border-radius: 8px;
 }
 
-.img-box h3 {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #333;
-}
-      
-
-    /* Gallery */
-    .gallery {
-      text-align: center;
-      padding: 2rem;
-    }
-    .gallery h2 {
-      margin-bottom: 1rem;
-      color: #ff6f61;
-    }
-    .gallery img {
-      margin: 0.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
-    }
-
-    /* Videos */
-    .videos {
-  text-align: center;
+/* ===================== VIDEOS ===================== */
+.videos {
   padding: 2rem;
+  background: white;
 }
 
 .video-box {
   display: inline-block;
   margin: 15px;
   padding: 10px;
-  background-color: #ffffff;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.video-box iframe {
-  width: 300px;
-  height: 200px;
-  border-radius: 8px;
+/* ===================== TABLE ===================== */
+.table-section {
+  padding: 2rem;
 }
-    .videos {
-      text-align: center;
-      padding: 2rem;
-      background: #fff;
-    }
-    .videos h2 {
-      margin-bottom: 1rem;
-      color: #ff6f61;
-    }
-    .videos video {
-      margin: 1rem;
-      border: 3px solid #ff6f61;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    /* Table */
-    .table-section {
-      padding: 2rem;
-      text-align: center;
-    }
-    .table-section h2 {
-      margin-bottom: 1rem;
-      color: #ff6f61;
-    }
-   /* ===== Professional Table Styling ===== */
 
 .bags-table {
-  width: 100%;
+  width: 95%;
+  margin: auto;
   border-collapse: collapse;
-  margin: 30px 0;
-  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-  font-size: 14px;
-  background-color: #ffffff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  overflow: hidden;
+  background: white;
 }
 
-/* Caption */
-.bags-table caption {
-  caption-side: top;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  text-align: left;
-}
-
-/* Header */
-.bags-table thead {
-  background-color: #1f2933;
-}
-
-.bags-table thead th {
-  color: #ffffff;
-  padding: 14px 12px;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  text-align: left;
-}
-
-/* Body */
-.bags-table tbody tr {
-  transition: background-color 0.3s ease;
-}
-
-.bags-table tbody tr:nth-child(even) {
-  background-color: #f9fafb;
-}
-
-.bags-table tbody tr:hover {
-  background-color: #eef2f7;
+.bags-table th {
+  background: #1f2933;
+  color: white;
+  padding: 10px;
 }
 
 .bags-table td {
-  padding: 12px;
-  color: #333;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-/* Availability badges */
-.bags-table td:last-child {
-  font-weight: 600;
+.bags-table tr:nth-child(even) {
+  background: #f2f2f2;
 }
 
-.bags-table td:last-child::before {
-  content: "● ";
-  font-size: 12px;
+.in-stock { color: green; font-weight: bold; }
+.limited { color: orange; font-weight: bold; }
+.out-stock { color: red; font-weight: bold; }
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: #222;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-.bags-table td:last-child:contains("In Stock") {
-  color: #16a34a;
-}
-
-.bags-table td:last-child:contains("Limited Stock") {
-  color: #ca8a04;
-}
-
-.bags-table td:last-child:contains("Out of Stock") {
-  color: #dc2626;
-}
-
-/* Responsive (mobile) */
-@media (max-width: 768px) {
-  .bags-table {
-    font-size: 13px;
-  }
-
-  .bags-table thead {
-    display: none;
-  }
-
-  .bags-table,
-  .bags-table tbody,
-  .bags-table tr,
-  .bags-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .bags-table tr {
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e5e7eb;
-  }
-
-  .bags-table td {
-    padding: 10px;
-    text-align: right;
-    position: relative;
-  }
-
-  .bags-table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 11px;
-    color: #6b7280;
-  }
-}
-      
-    /* Footer */
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-   padding: 2rem;
-      text-align: center;
-    }
-    .table-section h2 {
-      margin-bottom: 1rem;
-      color: #ff6f61;
-    }
-    table {
-      margin: auto;
-      border-collapse: collapse;
-      width: 90%;
-      background: #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 0.8rem;
-      text-align: center;
-    }
-    th {
-      background: #ff6f61;
-      color: white;
-    }
-    tr:nth-child(even) {
-      background: #f9f9f9;
-    }
-    tr:hover {
-      background: #ffe6e0;
-    } 
-  </style>
+</style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-container">
-    <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-    </div>
-  </nav>
+<!-- NAVIGATION -->
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Shop</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
 
-  <!-- Search -->
-  <section class="search">
-    <div class="search-container">
-    <input type="text" placeholder="Search for bags...">
-    <button>Search</button>
-    </div>
-  </section>
+<!-- HEADER -->
+<header>
+  <h1>Elda's Bags</h1>
+</header>
 
-  <!-- Heading -->
-  <header>
-    <h1>Elda's Bags</h1>
-    
-  </header>
+<!-- SEARCH -->
+<section class="search">
+  <input type="text" placeholder="Search for bags...">
+  <button>Search</button>
+</section>
 
-  <!-- Paragraph with formatting -->
-  <div class="content-box">
+<!-- CONTENT -->
+<div class="content-box">
+
   <p><b>With Elda's Bags all your needs are met!</b></p>
   <p><i>We have a wide variety of bags for every occasion.</i></p>
-  <p><u>trusting us is the best decision you'll make!</u></p>
-  <p><b>new arrival: Date 20<sup>23</sup></b></p>
-  <p>we are smooth as: H<sub>2</sub>O</p>
-  <p><s>we continue to serve you better</s></p>
-  <p><mark>we consider your satisfaction our priority welcome to Elda's Bags!</mark></p>
-  <p><q>shopping is more than just buying bags, it's an experience!</q> - Elda mulongo</p>
-  <p>Buy bags that suit your lifestyle and personality!</p>
+  <p><u>Trusting us is the best decision you'll make!</u></p>
+  <p><mark>Your satisfaction is our priority.</mark></p>
+
   <blockquote>
     Bags are not just accessories, they are companions in your journey.
   </blockquote>
 
-  
-
-  <!-- Line breaks -->
-  <p>At Elda's bag our customers are our priority<br> the customer is always right<br> welcome to Elda's Bags!<br>where you can express your style and personality through our bags.</p>
-
-  <!-- Horizontal rules -->
-  <p>We vary our collection regularly to meet your changing needs.</p>
-  <hr>
-  <p>come to find your perfect bag at Elda's Bags!</p>
-  <hr>
-  <p>And special offers are available for our loyal customers!</p>
-
-  <!-- Preformatted text -->
-  <pre>
-Our bags are made with high-quality materials and craftsmanship.
-our collection includes a wide range of styles, from classic to trendy, to suit every taste and occasion.
-our bags are designed to be functional and stylish, with features like multiple compartments, adjustable straps, and durable hardware.
-  </pre>
-
-  <!-- Lists -->
   <ul>
     <li>Leather Bag</li>
     <li>Handbag</li>
@@ -450,249 +202,86 @@ our bags are designed to be functional and stylish, with features like multiple 
     <li>Travel Bag</li>
   </ul>
 
-  <ol>
-    <li>Choose a bag</li>
-    <li>Add to cart</li>
-    <li>Checkout</li>
-    <li>Payment</li>
-    <li>Delivery</li>
-  </ol>
+</div>
 
-  <!-- Nested list -->
-  <ul>
-    <li>Leather Bags
-      <ul>
-        <li>Brown</li>
-        <li>Black</li>
-      </ul>
-    </li>
-    <li>Handbags
-      <ul>
-        <li>Small</li>
-        <li>Large</li>
-      </ul>
-    </li>
-    <li>Backpacks
-      <ul>
-        <li>School</li>
-        <li>Travel</li>
-      </ul>
-    </li>
-  </ul>
-  </div>
-  <!-- Six Pictures -->
-  <section class="gallery">
-    <h2>Bag Gallery</h2>
-    <h2 style="color: pink;">Image Gallery</h2>
-    <div class="gallery-row">
-    <img src="https://www.tannerbates.co.uk/cdn/shop/files/mini-baja-front-tan_4f65f3fa-6eaa-4c45-8b9b-686667d7e411_600x.jpg?v=1708568630.png" alt="Leather Bag" width="200">
-    <h3> Leather bag</h3>
-    </div>  
-    <div class="gallery-row">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_0KM2g2wDBT2MrLv4-QPKWeDpjBk30UtEnQ&s.png" alt="Handbag" width="200">
-      <h3> Handbag</h3>
+<!-- GALLERY -->
+<section class="gallery">
+  <h2>Bag Gallery</h2>
+
+  <div class="gallery-row">
+
+    <div class="img-box">
+      <img src="https://www.tannerbates.co.uk/cdn/shop/files/mini-baja-front-tan_4f65f3fa-6eaa-4c45-8b9b-686667d7e411_600x.jpg?v=1708568630" alt="Leather Bag">
+      <h3>Leather Bag</h3>
     </div>
-    <div class="gallery-row">
-    <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1719934853-1684523718-jansport-adaptive-66841f7397a9e.png?crop=0.913xw:0.913xh;0.0288xw,0.0321xh&resize=980:*.png" alt="Backpack" width="200">
+
+    <div class="img-box">
+      <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1719934853-1684523718-jansport-adaptive-66841f7397a9e.png?crop=0.913xw:0.913xh;0.0288xw,0.0321xh&resize=980:*" alt="Backpack">
       <h3>Backpack</h3>
     </div>
-    <div class="gallery-row">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvf03IjKiQ_FZndxgd9DI_LQFC6WW8zYI0Aw&s.png" alt="Tote Bag" width="200">
-      <h3>Tote bag</h3>
-    </div>
-    <div class="gallery-row">
-      <img src="https://www.maorimoana.co.nz/cdn/shop/files/MAORITRAVELBAG.png?v=1735594089&width=1080.png" alt="Travel Bag" width="200">
-      <h3>Travel bag</h3>
-    </div>
-     <div class="gallery-row">
-      <img src="https://www.net-a-porter.com/variants/images/1647597332512699/in/w2000_a3-4_q80.jpg" alt="Designer Bag" width="200">
-       <h3> Designer bag</h3>
-     </div>
-  </section>
 
-  <!-- YouTube Videos Section -->
+    <div class="img-box">
+      <img src="https://www.maorimoana.co.nz/cdn/shop/files/MAORITRAVELBAG.png?v=1735594089&width=1080" alt="Travel Bag">
+      <h3>Travel Bag</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEOS -->
 <section class="videos">
   <h2>Bag Videos</h2>
 
-  <!-- Video 1 -->
   <div class="video-box">
-  <iframe width="320" height="240" 
-    src="https://www.youtube.com/embed/DaF84RBu-ZE?si=ijGBPZfg8aGsaOuo" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
+    <iframe width="300" height="200"
+    src="https://www.youtube.com/embed/DaF84RBu-ZE"
+    allowfullscreen></iframe>
   </div>
-  <!-- Video 2 -->
-  <div class="video-box">
-  <iframe width="320" height="240" 
-    src="https://www.youtube.com/embed/DaF84RBu-ZE?si=ijGBPZfg8aGsaOuo" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
-  </div>
-  <!-- Video 3 -->
-    <div class="video-box">
-  <iframe width="320" height="240" 
-    src="https://www.youtube.com/embed/DaF84RBu-ZE?si=ijGBPZfg8aGsaOuo" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
-  </div>
-  <!-- Video 4 -->
-   <div class="video-box">   
-  <iframe width="320" height="240" 
-    src="https://www.youtube.com/embed/DaF84RBu-ZE?si=ijGBPZfg8aGsaOuo" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
-     </div>
+
 </section>
 
-  
-  <section class="table-section">
-    <div class="table-container">
-   <table class="bags-table">
-  <caption>Bags Product Overview</caption>
-
-  <thead>
-    <tr>
-      <th>Product ID</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Material</th>
-      <th>Color</th>
-      <th>Size</th>
-      <th>Weight (kg)</th>
-      <th>Brand</th>
-      <th>Price (ksh)</th>
-      <th>Availability</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>BG001</td>
-      <td>Urban Explorer</td>
-      <td>Backpack</td>
-      <td>Nylon</td>
-      <td>Black</td>
-      <td>Medium</td>
-      <td>0.9</td>
-      <td>UrbanX</td>
-      <td>4800</td>
-      <td>In Stock</td>
-    </tr>
-
-    <tr>
-      <td>BG002</td>
-      <td>Classic Elegance</td>
-      <td>Handbag</td>
-      <td>Genuine Leather</td>
-      <td>Brown</td>
-      <td>Small</td>
-      <td>0.7</td>
-      <td>EliteStyle</td>
-      <td>750</td>
-      <td>Limited Stock</td>
-    </tr>
-
-    <tr>
-      <td>BG003</td>
-      <td>Traveler Pro</td>
-      <td>Travel Bag</td>
-      <td>Polyester</td>
-      <td>Grey</td>
-      <td>Large</td>
-      <td>1.8</td>
-      <td>GoTravel</td>
-      <td>1200</td>
-      <td>Out of Stock</td>
-    </tr>
-
-    <tr>
-      <td>BG004</td>
-      <td>Eco Tote</td>
-      <td>Tote Bag</td>
-      <td>Recycled Canvas</td>
-      <td>Beige</td>
-      <td>Medium</td>
-      <td>0.6</td>
-      <td>EcoLine</td>
-      <td>3200</td>
-      <td>In Stock</td>
-    </tr>
-
-    <tr>
-      <td>BG005</td>
-      <td>Business Carry</td>
-      <td>Laptop Bag</td>
-      <td>PU Leather</td>
-      <td>Dark Blue</td>
-      <td>Medium</td>
-      <td>1.2</td>
-      <td>ProTech</td>
-      <td>890</td>
-      <td>In Stock</td>
-    </tr>
-  </tbody>
-    </div>
+<!-- TABLE -->
+<section class="table-section">
+<table class="bags-table">
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Category</th>
+  <th>Price (Ksh)</th>
+  <th>Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>BG001</td>
+  <td>Urban Explorer</td>
+  <td>Backpack</td>
+  <td>4800</td>
+  <td class="in-stock">In Stock</td>
+</tr>
+<tr>
+  <td>BG002</td>
+  <td>Classic Elegance</td>
+  <td>Handbag</td>
+  <td>750</td>
+  <td class="limited">Limited Stock</td>
+</tr>
+<tr>
+  <td>BG003</td>
+  <td>Traveler Pro</td>
+  <td>Travel Bag</td>
+  <td>1200</td>
+  <td class="out-stock">Out of Stock</td>
+</tr>
+</tbody>
 </table>
+</section>
 
-     <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-    <p>&copy; 2026 Elda's Bags. All rights reserved.</p>
-    </div>
-  </footer>
-  </style>
-</head>
-<body>
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Elda's Bags. All rights reserved.</p>
+</footer>
 
-
-
-
-       
-       
-  
-
-
-
-
-
-
-
-
-    
-
-    
-   
-     
-      
-      
-    
- 
-
-  
- 
-
-  
-        
-       
-  
-      
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
